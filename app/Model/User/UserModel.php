@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class UserModel extends Model
 {
     //
-    public $table='shop_admin';
+    public $table='books';
+    public $timestamps=false;
 }

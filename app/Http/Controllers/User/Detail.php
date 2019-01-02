@@ -8,5 +8,41 @@
             $info=UserModel::where(['admin_id'=>$id])->first()->toArray();
             echo '<pre>';print_r($info);
         }
+        public function add(){
+            $data=[
+                'book_name'=>str_random(5),
+                'book_author'=>str_random(3),
+                'book_price'=>150
+            ];
+            $res=UserModel::insert($data);
+            dump($res);
+        }
+        public function delete($id){
+            $where=[
+                'id'=>$id
+            ];
+            $res=UserModel::where($where)->delete();
+            print_r($res);
+        }
+        public function update($id){
+            $where=[
+                'id'=>$id
+            ];
+            $data=[
+                'book_name'=>str_random(5),
+                'book_author'=>str_random(3),
+                'book_price'=>150
+            ];
+            $res=UserModel::where($where)->update($data);
+            dump($res);
+        }
+        public function userList(){
+            $list=UserModel::all();
+            $data=[
+                'list'=>$list,
+                'page'=>100
+            ];
+            return view('user.userList',$data);
+        }
     }
 ?>

@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-  
-
 Route::get('/user/{id}','User\Detail@index');
+Route::get('/add','User\Detail@add');
+Route::get('/delete/{id}','User\Detail@delete');
+Route::get('/update/{id}','User\Detail@update');
+Route::get('/list','User\Detail@userList');
