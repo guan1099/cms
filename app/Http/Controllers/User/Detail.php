@@ -40,7 +40,7 @@
             $list=UserModel::all();
             $data=[
                 'list'=>$list,
-                'page'=>100
+                'page'=>10000
             ];
             return view('user.userList',$data);
         }
